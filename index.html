@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Variáveis CSS</title>
+
+    <style>
+        :root {
+            --cor-primaria: #c7889a;
+            --cor-secundaria: #6c757d;
+            --cor-texto: white;
+            --fonte-primaria: arial;
+            --padding-padrao: 8px;
+            --margem-padrao: 16px;
+        }
+
+        body {
+            font-family: var(--fonte-primaria);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        
+        }
+
+        header,
+        footer {
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto);
+            padding: var(--padding-padrao);
+            text-align: center;
+        }
+
+        main {
+            background-color: var(--cor-secundaria);
+            color: var(--cor-texto);
+            padding: var(--padding-padrao);
+            margin: var(--margem-padrao);
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label#toggle-label {
+            cursor: pointer;
+            padding: var(--padding-padrao);
+            margin: var(--margem-padrao);
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto);
+        }
+
+        input[type="checkbox"]:checked~header,
+        input[type="checkbox"]:checked~footer {
+            background-color: var(--cor-secundaria);
+        }
+
+        input[type="checkbox"]:checked~main {
+            background-color: var(--cor-primaria);
+        }
+
+        input[type="checkbox"]:checked~label#toggle-label {
+            background-color: var(--cor-secundaria);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="toggle-theme">
+    <label for="toggle-theme" id="toggle-label">Mudar Tema</label>
+    
+
+    <header>
+        <h1>Minha página</h1>
+    </header>
+
+    <main>
+        <p>Bem-vindo à minha página!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nisi magni omnis eius est velit sunt ipsa minus nihil magnam ullam architecto eveniet vitae, reprehenderit excepturi a similique fuga asperiores?</p>
+    </main>
+
+    <footer>
+        <p>© 2024 Minha Página</p>
+    </footer>
+</body>
+
+</html>
